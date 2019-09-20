@@ -106,11 +106,13 @@
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna nunc, suscipit sit amet rutrum at, posuere quis massa. Nulla facilisi. Proin volutpat elit quis mauris finibus, a eleifend quam posuere. Sed mollis gravida tincidunt. Praesent leo libero, feugiat quis pulvinar vitae, finibus vitae lectus. Ut libero felis, ultricies vitae ultrices at, tincidunt sed nisl. Duis luctus velit in vulputate faucibus. Sed interdum tincidunt magna, eu aliquet nulla facilisis nec. Maecenas fermentum pretium mauris, in congue risus venenatis eu. Aenean accumsan tellus at dui gravida malesuada. Sed in sodales dolor. Morbi dictum tellus in tincidunt posuere.
                 </p>
-            </article>
-            
+            </article>           
         </div>
         
-        </div>
+      </div>
         <!-- pie de pagina -->
+        <footer id="pie">
+            <p>Desarrollado por Enrique Abel &copy; 2019</p>
+        </footer>
     </body>
 </html>
