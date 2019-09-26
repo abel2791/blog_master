@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST)){
     
     //recoger los valores del formulario
@@ -11,6 +12,7 @@ if(isset($_POST)){
     $errores = array();
     
     //validar los datos antes de guardarlos en la base de datos :)  
+    
     //validar el nombre
     if(!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)){
         $nombre_validado = true;
@@ -47,8 +49,17 @@ if(isset($_POST)){
     $guardar_usuario=false;
     if(count($errores) == 0){
         $guardar_usuario = true;
+        
+        
         //insertar usuario en la base de datos en la tabla usuarios
+        
+        
+    }else{
+        $_SESSION['errores'] = $errores;
+        header('Location: index.php');
     }
+    
+    
 }
 
 
