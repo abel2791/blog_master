@@ -1,7 +1,8 @@
 <?php require_once 'includes/cabecera.php';?>
       
       <div id="contenedor">        
-      <?php require_once 'includes/lateral.php';?>;  
+      <?php require_once 'includes/lateral.php';?>
+      
         <!-- caja principal -->
         <div id="principal">
             <h1>Ultimas entradas</h1>
@@ -47,11 +48,5 @@
     
         <div class="clearfix"></div><!---para que el pie de pagina no suba,hacia arriba--->
       </div>
-        
-        
-        <!-- pie de pagina -->
-        <footer id="pie">
-            <p>Desarrollado por Enrique Abel &copy; 2019</p>
-        </footer>
-    </body>
-</html>
+
+<?php require_once 'includes/pie.php';?>
