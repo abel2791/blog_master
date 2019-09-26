@@ -45,3 +45,4 @@
            <div class="clearfix"></div><!---para que borre todos los flotados para que lo de abajo
            no se monte con lo de arriba-->
         </header>
+     <div id="contenedor">    

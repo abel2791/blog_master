@@ -1,8 +1,6 @@
-<?php require_once 'includes/cabecera.php';?>
-      
-      <div id="contenedor">        
-      <?php require_once 'includes/lateral.php';?>
-      
+<?php require_once 'includes/cabecera.php';?>          
+<?php require_once 'includes/lateral.php';?>
+
         <!-- caja principal -->
         <div id="principal">
             <h1>Ultimas entradas</h1>
@@ -46,7 +44,4 @@
                     </div>  
         </div><!--fin principal-->
     
-        <div class="clearfix"></div><!---para que el pie de pagina no suba,hacia arriba--->
-      </div>
-
 <?php require_once 'includes/pie.php';?>
