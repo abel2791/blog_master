@@ -1,6 +1,15 @@
 <?php
-session_start();
+
 if(isset($_POST)){
+     
+    //la conexion y la session la pongo en el if porque es mas recomendable que solo se carguen esos archivos
+    //Conexion a la base de datos
+    require_once 'includes/conexion.php';
+
+   //iniciar session
+   session_start();
+    
+    
     
     //recoger los valores del formulario
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
@@ -50,17 +59,30 @@ if(isset($_POST)){
     if(count($errores) == 0){
         $guardar_usuario = true;
         
-        
+        //cifrar la contraseña
+        $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+       
         //insertar usuario en la base de datos en la tabla usuarios
+        $sql = "INSERT INTO usuarios VALUES(null, $nombre, $apellidos, $email, $password, CURDATE());"; 
+        $guardar = mysqli_query($db, $sql);
         
+        if($guardar){
+            $_SESSION['completado'] = "El registro se ha completado con exito";
+        }else{
+             $_SESSION['errores']['general'] = "¡¡Fallo al guardar el usuario!!";
+        }
         
+        //hacemos una redireccion
+        header('Location: index.php');
+                
     }else{
         $_SESSION['errores'] = $errores;
         header('Location: index.php');
     }
     
-    
 }
+
+header('Location: index.php');
 
 
 
