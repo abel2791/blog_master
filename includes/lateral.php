@@ -23,8 +23,8 @@
                     <div class="alerta alerta-exito">
                        <?=$_SESSION['completado']?> 
                     </div>
-                <?php else: ?>
-                    <div class="alerta alerta-exito">
+                <?php elseif(isset($_SESSION['errores']['general'])): ?>
+                    <div class="alerta alerta-errores">
                        <?=$_SESSION['errores']['general']?> 
                     </div>
                 <?php endif; ?>
