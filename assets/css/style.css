@@ -192,6 +192,10 @@ input[type="submit"],
    border-color: green;
 }
 
+.boton-rojo{
+   background: red;
+   border-color: red;
+}
 
 /*principal*/
 #principal{
