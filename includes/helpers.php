@@ -26,9 +26,9 @@ function borrarErrores(){
     return $borrado;
 }
 
-function conseguirCategorias(){
+function conseguirCategorias($conexion){
     $sql = "SELECT * FROM categorias ORDER BY id ASC;";
-    $categorias = mysqli_query($db, $sql);
+    $categorias = mysqli_query($conexion, $sql);
     $result = array();
     
     if($categorias && mysqli_num_rows($categorias) >= 1){
