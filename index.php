@@ -4,41 +4,30 @@
         <!-- caja principal -->
         <div id="principal">
             <h1>Ultimas entradas</h1>
-            <article class="entrada">
-                <a href="">
-                <h2>Titulo de mi entrada</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna nunc, suscipit sit amet rutrum at, posuere quis massa. Nulla facilisi. Proin volutpat elit quis mauris finibus, a eleifend quam posuere. Sed mollis gravida tincidunt. Praesent leo libero, feugiat quis pulvinar vitae, finibus vitae lectus. Ut libero felis, ultricies vitae ultrices at, tincidunt sed nisl. Duis luctus velit in vulputate faucibus. Sed interdum tincidunt magna, eu aliquet nulla facilisis nec. Maecenas fermentum pretium mauris, in congue risus venenatis eu. Aenean accumsan tellus at dui gravida malesuada. Sed in sodales dolor. Morbi dictum tellus in tincidunt posuere.
-                </p>
-                </a>
-            </article>
             
-            <article class="entrada">
-                <a href="">
-                <h2>Titulo de mi entrada</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna nunc, suscipit sit amet rutrum at, posuere quis massa. Nulla facilisi. Proin volutpat elit quis mauris finibus, a eleifend quam posuere. Sed mollis gravida tincidunt. Praesent leo libero, feugiat quis pulvinar vitae, finibus vitae lectus. Ut libero felis, ultricies vitae ultrices at, tincidunt sed nisl. Duis luctus velit in vulputate faucibus. Sed interdum tincidunt magna, eu aliquet nulla facilisis nec. Maecenas fermentum pretium mauris, in congue risus venenatis eu. Aenean accumsan tellus at dui gravida malesuada. Sed in sodales dolor. Morbi dictum tellus in tincidunt posuere.
-                </p>
-                </a>
-            </article>
+            <?php
+                //creo una variable llamando a la funcion    
+                $entradas = conseguirUltimasEntradas($db);
+                if(!empty($entradas)):
+                    //y por cada entrada que recorra el mysql fetch me crea una variable entrada con un array asociativo
+                    while ($entrada = mysqli_fetch_assoc($entradas)):
+              ?>      
+                    <!--imprimo-->
+                    <article class="entrada">
+                       <a href="">
+                       <h2><?=$entrada['titulo']?></h2>
+                       <p>
+                           <!--limitamos numero de letras en los parrafos-->
+                           <?= substr($entrada['descripcion'], 0, 180)."..."?>
+                       </p>
+                       </a>
+                   </article>
             
-            <article class="entrada">
-                <a href="">
-                <h2>Titulo de mi entrada</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna nunc, suscipit sit amet rutrum at, posuere quis massa. Nulla facilisi. Proin volutpat elit quis mauris finibus, a eleifend quam posuere. Sed mollis gravida tincidunt. Praesent leo libero, feugiat quis pulvinar vitae, finibus vitae lectus. Ut libero felis, ultricies vitae ultrices at, tincidunt sed nisl. Duis luctus velit in vulputate faucibus. Sed interdum tincidunt magna, eu aliquet nulla facilisis nec. Maecenas fermentum pretium mauris, in congue risus venenatis eu. Aenean accumsan tellus at dui gravida malesuada. Sed in sodales dolor. Morbi dictum tellus in tincidunt posuere.
-                </p>
-                </a>
-            </article>
-            
-            <article class="entrada">
-                <a href="">
-                <h2>Titulo de mi entrada</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna nunc, suscipit sit amet rutrum at, posuere quis massa. Nulla facilisi. Proin volutpat elit quis mauris finibus, a eleifend quam posuere. Sed mollis gravida tincidunt. Praesent leo libero, feugiat quis pulvinar vitae, finibus vitae lectus. Ut libero felis, ultricies vitae ultrices at, tincidunt sed nisl. Duis luctus velit in vulputate faucibus. Sed interdum tincidunt magna, eu aliquet nulla facilisis nec. Maecenas fermentum pretium mauris, in congue risus venenatis eu. Aenean accumsan tellus at dui gravida malesuada. Sed in sodales dolor. Morbi dictum tellus in tincidunt posuere.
-                </p>
-                </a>
-            </article>
+            <?php
+                    endwhile;
+                endif;
+            ?>
+         
                     <div id="ver-todas">
                        <a href="">Ver todas las entradas</a>
                     </div>  
