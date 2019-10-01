@@ -13,7 +13,8 @@
                 </div>
             <?php endif; ?>
             
-            
+            <!--en caso de que no exista la variable de session usuario-->
+            <?php if(!isset($_SESSION['usuario'])): ?>
             <div id="login" class="bloque">
                 <h3>Identificate</h3>
                 
@@ -73,4 +74,5 @@
                 </form>
               <?php borrarErrores();?>                
             </div>
+            <?php endif;?>
         </aside>
