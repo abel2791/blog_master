@@ -1,7 +1,7 @@
 <?php require_once 'includes/cabecera.php';?>          
 <?php require_once 'includes/lateral.php';?>
 
-        <!-- caja principal -->
+       <!-- caja principal -->
         <div id="principal">
             <h1>Ultimas entradas</h1>
             
