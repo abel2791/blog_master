@@ -1,8 +1,11 @@
-<?php
+<?php require_once 'includes/cabecera.php';?>          
+<?php require_once 'includes/lateral.php';?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+ <!-- caja principal -->
+        <div id="principal">
+            <h1>Crear categorias</h1>
+            
+                  
+        </div><!--fin de caja principal-->
+    
+<?php require_once 'includes/pie.php';?>
