@@ -15,7 +15,7 @@
                 <input type="text" name="titulo"/>
                 
                 <label for="descripcion">Descripcion:</label>
-                <input type="text" name="descripcion"/>
+                <textarea name="descripcion"></textarea>
                 
                 <label for="categoria">Categorias</label>
                 <select name="categoria">
