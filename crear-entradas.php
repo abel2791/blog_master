@@ -46,6 +46,7 @@
                 
                 <input type="submit" value="Guardar"/>
             </form>
+            <?php borrarErrores();?>
             
                   
         </div><!--fin de caja principal-->
