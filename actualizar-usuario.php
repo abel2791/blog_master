@@ -45,11 +45,19 @@ if(isset($_POST)){
     
     $guardar_usuario=false;
     if(count($errores) == 0){
+        $usuario = $_SESSION['usuario'];
         $guardar_usuario = true;
-                     
+        
+        //comprobar si el email ya existe
+        $sql = "SELECT id, email FROM usuarios WHERE email = '$email'";
+        $isset_email = mysqli_query($db, $sql);
+        $isset_user = mysqli_fetch_assoc($isset_email);
+        
+        if($isset_user['id'] == $usuario['id'] || empty($isset_user)){
+                                         
         //actualizar usuario en la base de datos en la tabla usuarios
         //antes de hacer la consulta, tenemos que recoger en una variable usuario lo que es el objeto del usuario que esta en la sesion
-        $usuario = $_SESSION['usuario'];
+       
         $sql = "UPDATE usuarios SET ".
                 "nombre = '$nombre', ".
                 "apellidos = '$apellidos', ".
@@ -63,8 +71,13 @@ if(isset($_POST)){
             $_SESSION['usuario']['email'] = $email;
             $_SESSION['completado'] = "Tus datos se han actualizado con exito";
         }else{
-             $_SESSION['errores']['general'] = "¡¡Fallo al actualizar el usuario!!";
+       $_SESSION['errores']['general'] = "¡¡Fallo al actualizar el usuario!!";
+
         }
+      }else{
+       $_SESSION['errores']['general'] = "¡¡El usuario ya existe!!";
+
+      }
         
         //hacemos una redireccion
         header('Location: index.php');
