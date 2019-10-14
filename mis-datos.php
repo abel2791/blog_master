@@ -31,7 +31,7 @@
             <input type="email" name="email" />
             <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email'): '';?>
            
-             <input type="submit" name="submit" value="Registrar"/>
+             <input type="submit" name="submit" value="Actualizar"/>
         </form>
       <?php borrarErrores();?> 
     </div><!--fin principal-->
