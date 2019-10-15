@@ -7,7 +7,7 @@
             
             <?php
                 //creo una variable llamando a la funcion    
-                $entradas = conseguirUltimasEntradas($db);
+                $entradas = conseguirEntradas($db, true);
                 if(!empty($entradas)):
                     //y por cada entrada que recorra el mysql fetch me crea una variable entrada con un array asociativo
                     while ($entrada = mysqli_fetch_assoc($entradas)):
@@ -30,7 +30,7 @@
             ?>
          
                     <div id="ver-todas">
-                       <a href="">Ver todas las entradas</a>
+                        <a href="entradas.php">Ver todas las entradas</a>
                     </div>  
         </div><!--fin principal-->
     
