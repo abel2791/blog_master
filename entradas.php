@@ -3,7 +3,7 @@
 
        <!-- caja principal -->
         <div id="principal">
-            <h1>Ultimas entradas</h1>
+            <h1>Todas las entradas</h1>
             
             <?php
                 //creo una variable llamando a la funcion    

@@ -42,12 +42,12 @@ function conseguirCategorias($conexion){
 }
 
 
-function conseguirEntradas($conexion,$limit = null){
+function conseguirEntradas($conexion, $limit = null){
     $sql = " SELECT e.*, c.nombre AS 'categoria' FROM entradas e ".
             " INNER JOIN categorias c ON e.categoria_id = c.id ".
-            " ORDER BY e.id DESC";
+            " ORDER BY e.id DESC ";
     
-    if($limit ){
+    if($limit){
         //Es equivalente a $sql = $sql." LIMIT 4";
         $sql .="LIMIT 4";
     }
