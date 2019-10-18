@@ -56,12 +56,13 @@ function conseguirCategoria($conexion, $id){
 
 function conseguirEntradas($conexion, $limit = null, $categoria = null){
     $sql = " SELECT e.*, c.nombre AS 'categoria' FROM entradas e ".
-            " INNER JOIN categorias c ON e.categoria_id = c.id ".
-            " ORDER BY e.id DESC ";
+            " INNER JOIN categorias c ON e.categoria_id = c.id ";
     
-    if(!empty($categoria) && is_int($categoria)){
-        $sql.= "WHERE e.categoria_id = $categoria";
+    if(!empty($categoria)){
+        $sql.= "WHERE e.categoria_id = $categoria ";
     }
+    
+    $sql .= " ORDER BY e.id DESC ";
     
     if($limit){
         //Es equivalente a $sql = $sql." LIMIT 4";

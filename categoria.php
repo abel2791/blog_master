@@ -16,8 +16,8 @@
             
             <?php
                 //creo una variable llamando a la funcion    
-                $entradas = conseguirEntradas($db);
-                if(!empty($entradas)):
+                $entradas = conseguirEntradas($db, null, $_GET['id']);
+                if(!empty($entradas) && mysqli_num_rows($entradas) >= 1):
                     //y por cada entrada que recorra el mysql fetch me crea una variable entrada con un array asociativo
                     while ($entrada = mysqli_fetch_assoc($entradas)):
               ?>      
@@ -35,8 +35,11 @@
             
             <?php
                     endwhile;
-                endif;
-            ?>                            
+                else:
+            ?>
+                    <div class="alerta">No hay entradas en esta categoria</div>
+            <?php
+            endif; ?>
         </div><!--fin principal-->
     
 <?php require_once 'includes/pie.php';?>
