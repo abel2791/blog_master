@@ -18,7 +18,7 @@
             <a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">            
             <h2><?=$entrada_actual['categoria']?></h2>
             </a>
-            <h4><?=$entrada_actual['fecha']?></h4>
+            <h4><?=$entrada_actual['fecha']?> | <?=$entrada_actual['usuario'] ?></h4>
             <p>
                 <?=$entrada_actual['descripcion']?>
             </p>
