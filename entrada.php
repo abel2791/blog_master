@@ -22,7 +22,11 @@
             <p>
                 <?=$entrada_actual['descripcion']?>
             </p>
-           
+            
+            <?php if(isset($_SESSION["usuario"]) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']): ?>
+            <a href="editar-entrada.php" class="boton boton-verde">Editar entrada</a>
+            <a href="borrar-entrada.php" class="boton ">Eliminar entrada</a>
+            <?php endif;?>
         </div><!--fin principal-->
     
 <?php require_once 'includes/pie.php';?>
